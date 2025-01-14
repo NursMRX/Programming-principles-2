@@ -1,0 +1,15 @@
+import socket
+
+def check_ip(ip):
+    try:
+        socket.create_connection((ip, 80), timeout=1)
+        print(f"IP {ip} доступен.")
+    except (socket.timeout, socket.error):
+        print(f"IP {ip} не доступен.")
+        
+for i in range(1, 256):
+    for j in range(1, 256):
+        for k in range(1, 256):
+            for g in range(1, 256):
+                ip = f"{i}.{j}.{k}.{g}"
+                check_ip(ip)
