@@ -2,7 +2,7 @@ str1 = """Lorem ipsum dolor sit amet,
 consectetur adipiscing elit,
 sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua."""
-print(a)
+print(str1)
 
 b = "Hello, World!"
 print(b[2:5])
