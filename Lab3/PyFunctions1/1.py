@@ -4,4 +4,4 @@ def ConvertGramToOunces(Gram):
 
 gram = int(input("Enter the gram: "))
 
-print(ConvertGramToOunces(gram))
+print(f"{gram} gram in ouncec will be {ConvertGramToOunces(gram)}")
