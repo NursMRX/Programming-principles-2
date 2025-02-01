@@ -16,7 +16,7 @@ def filter_prime(numbers):
     return PrimeNumbers
 
 
-numbers = [randint(1, 25) for n in range(25)]
+numbers = [randint(1, 30) for n in range(30)]
 
 print(f"Generated numbers: {numbers}")
 print(f"Prime numbers: {filter_prime(numbers)}")
