@@ -7,4 +7,4 @@ def Perm(string):
 
 
 string = str(input("Enter a word: "))
-print(Perm(string))
+Perm(string)
