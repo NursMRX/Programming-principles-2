@@ -22,3 +22,4 @@ y_move = float(input("new y coordinate: "))
 initial_point.move(x_move, y_move)
 distance_after_move = initial_point.dist()
 print(f"Distance between initial point and new point after moving: {distance_after_move}")
+#
