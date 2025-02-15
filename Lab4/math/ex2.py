@@ -1,0 +1,5 @@
+height = float(input("Height: "))
+a = float(input("Base, first value: "))
+b = float(input("Base, second value: "))
+Area = ((a+b)*height/2)
+print(f"Expected Output: {Area:.2f}")
