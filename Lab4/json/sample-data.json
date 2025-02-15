@@ -786,7 +786,7 @@
                     "snmpTrapSt": "enable",
                     "spanMode": "not-a-span-dest",
                     "speed": "inherit",
-                    "status": "",
+                    "status": " ",
                     "switchingSt": "disabled",
                     "trunkLog": "default",
                     "usage": "fabric,fabric-ext"
