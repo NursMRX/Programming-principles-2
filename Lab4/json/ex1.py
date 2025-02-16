@@ -24,4 +24,3 @@ for i in interfaces:
         data(data2)
     if data2["dn"] == "topology/pod-1/node-201/sys/phys-[eth1/35]":
         data(data2)
-
