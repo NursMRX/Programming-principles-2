@@ -11,5 +11,5 @@ square = squares_of_number(number)
 try:
     while True:
         print(next(square), end=" ")
-except:
+except StopIteration:
     pass
