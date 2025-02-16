@@ -14,6 +14,5 @@ try:
         print(next_even, end='')
         next_even = next(it)
         print(', ' if next_even is not None else '', end='')
-
 except StopIteration:
     pass
