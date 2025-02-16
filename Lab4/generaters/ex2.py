@@ -11,8 +11,9 @@ it = even_numbers(number)
 try:
     next_even = next(it)
     while True:
-        print(next_even, end="" )
+        print(next_even, end='')
         next_even = next(it)
-        print(", " if next_even is not None else "", end="")
+        print(', ' if next_even is not None else '', end='')
+
 except StopIteration:
     pass
