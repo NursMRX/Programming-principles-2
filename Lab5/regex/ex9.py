@@ -11,5 +11,7 @@ def spaces(text):
     return res
 with open("row.txt", "r", encoding="utf-8") as row:
     file = row.read()
+
+
 a = spaces(file)
 print(a)
