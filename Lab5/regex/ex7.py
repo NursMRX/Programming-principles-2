@@ -5,6 +5,5 @@ import re
 with open("row.txt", "r", encoding="utf-8") as row:
     file = row.read()
     
-    
 camel_case_string = snake_to_camel(file)
 print(camel_case_string)
