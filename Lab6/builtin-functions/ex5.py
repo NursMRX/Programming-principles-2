@@ -1,8 +1,9 @@
-def polindrome(string):
-    if string == reversed(string):
-        print("Polindrome")
-    else:
-        print("Not polindrome")
-    
-string = input()
-polindrome(string)
+def check_all_true(tuple):
+    return all(tuple)
+
+
+tuple1 = (True, 1, 'McLaren')
+tuple2 = ('Maybach', ' ', 0)
+
+print(check_all_true(tuple1))
+print(check_all_true(tuple2))
