@@ -83,6 +83,7 @@ def apple_spawn():
     length += 1
     eat_sound.play()
 
+
     if score % 5 == 0:
         level += 1
         FPS += 2
