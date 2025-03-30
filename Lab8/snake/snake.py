@@ -5,7 +5,7 @@ import time
 pygame.font.init()
 pygame.init()
 
-# 🟢 Настройки
+#Настройки
 size = 30
 half_size = size // 2
 res = 750
@@ -14,40 +14,38 @@ FPS = 50
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((res, res))
 
-# 🟩 Цвета (в стиле неоновой змейки)
+#Цвета (в стиле неоновой змейки)
 BG_COLOR = (20, 20, 20)       # Тёмный фон
 APPLE_COLOR = (255, 0, 0)     # Красное яблоко
 GRID_COLOR = (40, 40, 40)     # Цвет сетки
 
-# 📊 Счёт и уровень (должно быть перед SNAKE_COLOR)
+#Счёт и уровень
 score = 0
 level = 1
+snake_start_position = res // 2 - half_size
+length = 4
+
 
 SNAKE_COLOR = (0, max(255 - level * 10, 50), 0)  # Чем выше уровень, тем темнее змейка
 head_img = pygame.image.load("/home/nursultan/Projects python/PP2/Lab8/snake/snake_head_blue.png")  # Загружаем картинку головы
 head_img = pygame.transform.scale(head_img, (size, size))  # Подгоняем под размер
 
 
-# 🔥 Анимация змейки    
+#Анимация змейки    
 snake_frame_speed = 5
 frame_count = 0
 
-# 📊 Счёт и уровень
-score = 0
-level = 1
-snake_start_position = res // 2 - half_size
-length = 4
 
-# 🐍 Направления
+#Направления
 dirX, dirY = 0, size
 direction = {"w": (0, -size), "s": (0, size), "a": (-size, 0), "d": (size, 0)}
 snake = [(snake_start_position, snake_start_position)]
 apple = (random.randrange(0, res - size, size), random.randrange(0, res - size, size))
 
-# 🖋 Шрифт
+#Шрифт
 font = pygame.font.SysFont("Arial", 36, bold=True)
 
-# 🎵 Звуки
+#Звуки
 pygame.mixer.init()
 eat_sound = pygame.mixer.Sound("/home/nursultan/Projects python/PP2/Lab8/snake/eat_sound.mp3")
 pygame.mixer.music.set_volume(0.6) # Громкость от 0.0 до 1.0
@@ -56,7 +54,7 @@ pygame.mixer.music.load("/home/nursultan/Projects python/PP2/Lab8/snake/idea10.m
 pygame.mixer.music.set_volume(0.6)  # Громкость от 0.0 до 1.0
 pygame.mixer.music.play(-1)  # -1 означает бесконечное повторение
 
-# 🔴 Функция окончания игры
+#Функция окончания игры
 def game_over():
     game_over_sound.play()
     for i in range(5):
@@ -74,7 +72,7 @@ def game_over():
     quit()
 
 
-# 🍎 Функция генерации яблока
+#Функция генерации яблока
 def apple_spawn():
     global apple, score, length, level, FPS
     while True:
@@ -89,7 +87,7 @@ def apple_spawn():
         level += 1
         FPS += 2
 
-# 📌 Функция рисования сетки
+#Функция рисования сетки
 def draw_grid():
     for x in range(0, res, size):
         for y in range(0, res, size):
@@ -103,7 +101,7 @@ def draw_apple():
 
 
 
-# 🎮 Основной цикл игры
+#Основной цикл игры
 while True:
     pygame.display.set_caption(f"Snake | Score: {score} | Level: {level}")
 
@@ -119,35 +117,35 @@ while True:
             pygame.draw.rect(screen, (0, 160, 0), (x, y, size, size))
 
     
-    # 🌑 Фон и сетка
+    #Фон и сетка
     screen.fill(BG_COLOR)
     draw_grid()
 
-    # 🔴 Рисуем яблоко с градиентом (теперь оно не перекрывается фоном)
+    #Рисуем яблоко с градиентом (теперь оно не перекрывается фоном)
     draw_apple()
 
-    # 🟢 Рисуем змейку (сначала тень, затем тело)
+    #Рисуем змейку (сначала тень, затем тело)
     for x, y in snake:
         pygame.draw.rect(screen, (0, 80, 0), (x-2, y-2, size+4, size+4), border_radius=10)  # Тень
         pygame.draw.rect(screen, SNAKE_COLOR, (x, y, size, size), border_radius=5)  # Тело змейки
 
-    # 🎭 Добавляем голову змейки поверх тела
+    #Добавляем голову змейки поверх тела
     head_x, head_y = snake[-1]
     screen.blit(head_img, (head_x, head_y))
 
 
-    # 🐍 Логика движения змейки
+    #Логика движения змейки
     if frame_count % snake_frame_speed == 0:
         newX = snake[-1][0] + dirX
         newY = snake[-1][1] + dirY
         snake.append((newX, newY))
         snake = snake[-length:]
 
-    # 🍏 Проверка съедания яблока
+    #Проверка съедания яблока
     if apple[0] == snake[-1][0] and apple[1] == snake[-1][1]:
         apple_spawn()
 
-    # 🎮 Управление
+    #Управление
     key = pygame.key.get_pressed()
     if key[pygame.K_w] and (dirX, dirY) != direction["s"]:
         dirX, dirY = direction["w"]
@@ -166,7 +164,7 @@ while True:
             pygame.mixer.music.play(-1)
 
 
-    # 💀 Проверка на столкновение
+    #Проверка на столкновение
     if (
         snake[-1][0] < 0 or snake[-1][0] >= res or
         snake[-1][1] < 0 or snake[-1][1] >= res
