@@ -15,7 +15,7 @@ def show_hotkeys():
 
 show_hotkeys()
 
-music_folder = "music"
+music_folder = "/home/nursultan/Projects python/PP2/Lab7/ex2/music"
 musics = [os.path.join(music_folder, file) for file in os.listdir(music_folder) if file.endswith(".mp3")]
 
 if not musics:

@@ -7,9 +7,9 @@ WIDTH, HEIGHT = 1400, 1050
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Mickey Clock")
 
-clock_img = pygame.image.load("clock.png")
-minute_hand = pygame.image.load("rightarm.png")
-second_hand = pygame.image.load("leftarm.png")
+clock_img = pygame.image.load("/home/nursultan/Projects python/PP2/Lab7/ex1/clock.png")
+minute_hand = pygame.image.load("/home/nursultan/Projects python/PP2/Lab7/ex1/rightarm.png")
+second_hand = pygame.image.load("/home/nursultan/Projects python/PP2/Lab7/ex1/leftarm.png")
 
 
 clock_center = (WIDTH // 2, HEIGHT // 2)
