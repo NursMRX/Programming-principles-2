@@ -7,8 +7,8 @@ from pygame.locals import *
 pygame.init()
 
 # Настройки экрана
-SCREEN_WIDTH = 400
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 840
+SCREEN_HEIGHT = 650
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Гонки")
 
@@ -21,8 +21,8 @@ GOLD = (255, 215, 0)
 ROAD_COLOR = (100, 100, 100)
 
 # Границы дороги
-ROAD_LEFT = 50
-ROAD_RIGHT = 350
+ROAD_LEFT = 120
+ROAD_RIGHT = 720
 
 # Игровые переменные
 SPEED = 5
@@ -35,7 +35,7 @@ FPS = 60
 # Загрузка изображений
 try:
     # Фон дороги
-    background_img = pygame.image.load("/home/nursultan/Projects python/PP2/Lab9/racer/AnimatedStreet.png").convert()
+    background_img = pygame.image.load("/home/nursultan/Projects python/PP2/Lab9/racer/background.png").convert()
     background_img = pygame.transform.scale(background_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
     
     # Машина игрока
@@ -68,8 +68,8 @@ class Coin(pygame.sprite.Sprite):
         self.value = self.type  # Значение монеты
         
     def reset_position(self):
-        self.rect.center = (random.randint(ROAD_LEFT+30, ROAD_RIGHT-30), 
-                          random.randint(-100, -40))
+        self.rect.center = (random.randint(ROAD_LEFT+40, ROAD_RIGHT-120), 
+        random.randint(-100, -40))
         self.speed = random.randint(2, 5)
     
     def update(self):
@@ -86,7 +86,7 @@ class Enemy(pygame.sprite.Sprite):
         self.speed = SPEED
         
     def reset_position(self):
-        self.rect.center = (random.randint(ROAD_LEFT+25, ROAD_RIGHT-25), -100)
+        self.rect.center = (random.randint(ROAD_LEFT+40, ROAD_RIGHT-40), -100)
     
     def update(self):
         global SCORE
