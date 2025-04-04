@@ -1,4 +1,4 @@
-import pygame # type: ignore
+import pygame 
 import os
 
 pygame.init()
@@ -15,7 +15,7 @@ def show_hotkeys():
 
 show_hotkeys()
 
-music_folder = "/home/nursultan/Projects python/PP2/Lab7/ex2/music"
+music_folder = "/home/nursultan/User Nurs/Projects python/PP2/Lab7/ex2/music"
 musics = [os.path.join(music_folder, file) for file in os.listdir(music_folder) if file.endswith(".mp3")]
 
 if not musics:
@@ -27,10 +27,10 @@ track = 0
 pygame.mixer.music.load(musics[track])
 
 def play():
-    pygame.mixer.music.play()
+    pygame.mixer.music.unpause()  # Changed from pause() to unpause() for more logical behavior
 
-def stop():
-    pygame.mixer.music.stop()
+def pause():
+    pygame.mixer.music.pause()
 
 def next():
     global track
@@ -52,6 +52,8 @@ while run:
             run = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
+                pause()
+            elif event.key == pygame.K_p:
                 play()
             elif event.key == pygame.K_s:
                 stop()

@@ -42,7 +42,7 @@ brush_thickness = 5
 eraser_thickness = 20  # Separate thickness for eraser
 
 # Load Eraser Image
-eraser_img = pygame.image.load("/home/nursultan/Projects python/PP2/Lab9/paint/eraser.png") 
+eraser_img = pygame.image.load("/home/nursultan/User Nurs/Projects python/PP2/Lab9/paint/eraser.png") 
 eraser_img = pygame.transform.scale(eraser_img, (60, 60))
 
 # Font for thickness display

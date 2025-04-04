@@ -1,5 +1,4 @@
-import pygame # type: ignore
-
+import pygame
 pygame.init()
 
 screen=pygame.display.set_mode((800,800))
@@ -9,7 +8,7 @@ white=(255,255,255)
 red=(255,0,0)
 
 x,y=400,400
-radius=25
+radius=40
 move=20
 
 run=True

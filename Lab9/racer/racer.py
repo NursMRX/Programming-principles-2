@@ -21,8 +21,8 @@ GOLD = (255, 215, 0)
 ROAD_COLOR = (100, 100, 100)
 
 # Границы дороги
-ROAD_LEFT = 120
-ROAD_RIGHT = 720
+ROAD_LEFT = 140
+ROAD_RIGHT = 700
 
 # Игровые переменные
 SPEED = 5
@@ -68,7 +68,7 @@ class Coin(pygame.sprite.Sprite):
         self.value = self.type  # Значение монеты
         
     def reset_position(self):
-        self.rect.center = (random.randint(ROAD_LEFT+40, ROAD_RIGHT-120), 
+        self.rect.center = (random.randint(ROAD_LEFT+40, ROAD_RIGHT-140), 
         random.randint(-100, -40))
         self.speed = random.randint(2, 5)
     
