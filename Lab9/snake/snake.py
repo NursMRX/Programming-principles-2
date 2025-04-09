@@ -53,7 +53,7 @@ pygame.mixer.music.play(-1)
 # Анимация змейки    
 snake_frame_speed = 5
 frame_count = 0
-
+З
 # Направления
 dirX, dirY = 0, size
 direction = {"w": (0, -size), "s": (0, size), "a": (-size, 0), "d": (size, 0)}
