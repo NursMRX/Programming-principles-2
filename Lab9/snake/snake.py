@@ -104,7 +104,7 @@ def apple_spawn():
     if score // 5 > level - 1: #score // 5 вычисляет текущий уровень, level - 1 — это текущий уровень
         level += 1
         FPS += 10
- 
+    
 
 # Функция рисования сетки
 def draw_grid():
