@@ -2,7 +2,7 @@ import psycopg2
 
 
 conn = psycopg2.connect(
-    dbname="phonebook",
+    dbname=" snake_game",
     user="postgres",
     password="clay0xRoot",
     host="localhost"
@@ -19,4 +19,12 @@ def execute_query(query):
 
 
 with conn.cursor() as cur:
-    cur.execute("SELECT * FROM users;")
+    cur.execute("SELECT * FROM users;")    
+    
+    
+    
+    
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+
